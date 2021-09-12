@@ -17,11 +17,16 @@ export default function mainShowcase(cityName, countryName, weatherData) {
     tempInfo.innerHTML = `Temperature: ${
       weatherData.current.temp
     }${String.fromCharCode(176)}`;
+
     mainData.append(img, tempInfo);
+    mainData.classList.add('mr-30');
 
     populateByHour(weatherData, hourlyDataContainer);
+    hourlyDataContainer.classList.add('flex', 'overflow-x');
 
     showcase.append(mainData, hourlyDataContainer);
+    showcase.classList.add('flex');
+
     section.append(h4, showcase);
     return section;
   } catch (err) {
