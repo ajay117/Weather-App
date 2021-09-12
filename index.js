@@ -29,7 +29,7 @@ form.addEventListener('submit', (e) => {
     try {
       const [cityName, countryName, lat, lon] = await cityInfo();
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}9778&exclude=minutely,hourly&appid=659000770aa7828200a70f67beaa5b6c`,
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}9778&exclude=minutely&appid=659000770aa7828200a70f67beaa5b6c`,
         { mode: 'cors' },
       );
       const weatherData = await response.json();
