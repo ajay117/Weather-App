@@ -1,4 +1,4 @@
-import mainShowcase from '../modules/mainShowcase.js';
+import mainShowcase from './modules/mainShowcase.js';
 
 const form = document.querySelector('form');
 const main = document.querySelector('main');
