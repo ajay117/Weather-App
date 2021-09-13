@@ -1,11 +1,12 @@
 // Convert a timeStr
 export default function showOnlyHour(timeStr) {
-  let str = timeStr[timeStr.length - 2] + timeStr[timeStr.length - 1];
+  const amPm = timeStr[timeStr.length - 2] + timeStr[timeStr.length - 1];
+  let hour = '';
   for (let i = 0; i < timeStr.length; i += 1) {
     if (timeStr[i] === ':') {
       break;
     }
-    str = timeStr[i] + str;
+    hour += timeStr[i];
   }
-  return str;
+  return hour + amPm;
 }
