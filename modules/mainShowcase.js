@@ -19,15 +19,15 @@ export default function mainShowcase(cityName, countryName, weatherData) {
     }${String.fromCharCode(176)}`;
 
     mainData.append(img, tempInfo);
-    mainData.classList.add('mr-30');
+    // mainData.classList.add('mr-30');
 
-    populateByHour(weatherData, hourlyDataContainer);
     hourlyDataContainer.classList.add('flex', 'overflow-x');
+    populateByHour(weatherData, hourlyDataContainer);
 
-    showcase.append(mainData, hourlyDataContainer);
-    showcase.classList.add('flex');
+    showcase.appendChild(mainData);
+    // showcase.classList.add('flex');
 
-    section.append(h4, showcase);
+    section.append(h4, showcase, hourlyDataContainer);
     return section;
   } catch (err) {
     console.log(err);
