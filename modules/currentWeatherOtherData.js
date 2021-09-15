@@ -1,5 +1,4 @@
 import toLocaleTimeString from './utility/toLocalTimeString.js';
-// import populatePara from './utility/populatePara.js';
 
 export default function populateCurrentWeatherOtherData(
   weatherData,
@@ -8,7 +7,6 @@ export default function populateCurrentWeatherOtherData(
   const container = document.createElement('div');
   container.classList.add('flex', 'flex-wrap', 'bg-black');
   Object.entries(weatherData.current).forEach((item) => {
-    console.log(item);
     const div = document.createElement('div');
     const paraTop = document.createElement('p');
     const paraBottom = document.createElement('p');
@@ -31,10 +29,13 @@ export default function populateCurrentWeatherOtherData(
       paraBottom.textContent = `${value}${String.fromCharCode(176)}`;
     } else if (desc === 'pressure') {
       paraTop.textContent = 'Pressure';
-      paraBottom.textContent = `${value}hPa`;
+      paraBottom.textContent = `${value} hPa`;
     } else if (desc === 'humidity') {
       paraTop.textContent = 'Humidity';
       paraBottom.textContent = `${value}%`;
+    } else if (desc === 'dew_point') {
+      paraTop.textContent = 'Dew Point';
+      paraBottom.textContent = `${value}${String.fromCharCode(176)}`;
     } else if (desc === 'uvi') {
       paraTop.textContent = 'UVI';
       paraBottom.textContent = `${value}${String.fromCharCode(176)}`;
@@ -55,7 +56,9 @@ export default function populateCurrentWeatherOtherData(
       paraBottom.textContent = `${value} metre/sec`;
     } else if (desc === 'weather') {
       paraTop.textContent = 'Description';
-      paraBottom.textContent = `${value[0].description}`;
+      paraBottom.textContent = `${value[0].description[0].toUpperCase()}${value[0].description.slice(
+        1,
+      )}`;
     }
     div.classList.add('flex-basic');
     div.append(paraTop, paraBottom);
