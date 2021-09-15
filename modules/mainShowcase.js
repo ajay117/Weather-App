@@ -1,11 +1,12 @@
 import populateByHour from './hourlyDataContainer.js';
-import populateCurrentWeatherOtherData from './currentWeatherOtherData.js';
 
 export default function mainShowcase(cityName, countryName, weatherData) {
   try {
     const section = document.createElement('section');
     const showcase = document.createElement('div');
     const mainData = document.createElement('div');
+
+    // This will contain hourly forecast
     const hourlyDataContainer = document.createElement('div');
     const h4 = document.createElement('h4');
     const tempInfo = document.createElement('p');
@@ -29,7 +30,6 @@ export default function mainShowcase(cityName, countryName, weatherData) {
     // showcase.classList.add('flex');
 
     section.append(h4, showcase, hourlyDataContainer);
-    populateCurrentWeatherOtherData(weatherData, section);
     return section;
   } catch (err) {
     console.log(err);
