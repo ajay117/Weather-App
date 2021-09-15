@@ -1,4 +1,6 @@
 import mainShowcase from './modules/mainShowcase.js';
+import populateCurrentWeatherOtherData from './modules/currentWeatherOtherData.js';
+import populateDailyData from './modules/dayByDayDataContainer.js';
 // import populateForm from './modules/form.js';
 
 const form = document.querySelector('form');
@@ -23,7 +25,6 @@ form.addEventListener('submit', (e) => {
       const subData = info[0];
       return [subData.name, subData.country, subData.lat, subData.lon];
     } catch (err) {
-      // Later do something with this error.
       return err;
     }
   };
@@ -37,13 +38,13 @@ form.addEventListener('submit', (e) => {
         { mode: 'cors' },
       );
       const weatherData = await response.json();
-      console.log(weatherData);
       showcase.appendChild(mainShowcase(cityName, countryName, weatherData));
 
-      // console.log(weatherData, weatherData.current);
+      populateCurrentWeatherOtherData(weatherData, showcase);
+      showcase.appendChild(populateDailyData(weatherData));
       return weatherData;
     } catch (err) {
-      console.log(err);
+      return err;
     }
   };
 
