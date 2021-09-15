@@ -4,7 +4,7 @@ import populateDailyData from './modules/dayByDayDataContainer.js';
 // import populateForm from './modules/form.js';
 
 const form = document.querySelector('form');
-const showcase = document.querySelector('#showcase');
+const showcase = document.querySelector('.showcase');
 
 // populateForm(showcase);
 

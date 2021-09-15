@@ -5,7 +5,7 @@ export default function populateCurrentWeatherOtherData(
   parentContainer,
 ) {
   const container = document.createElement('div');
-  container.classList.add('flex', 'flex-wrap', 'bg-black');
+  container.classList.add('showcase-misc');
   Object.entries(weatherData.current).forEach((item) => {
     const div = document.createElement('div');
     const paraTop = document.createElement('p');

@@ -3,6 +3,7 @@ import getDay from './utility/getOnlyDay.js';
 export default function populateDailyData(weatherData) {
   try {
     const mainDiv = document.createElement('div');
+    mainDiv.classList.add('showcase-daily');
     const dailyDataArr = weatherData.daily;
     for (let i = 0; i < dailyDataArr.length; i += 1) {
       const childDiv = document.createElement('div');
@@ -25,6 +26,7 @@ export default function populateDailyData(weatherData) {
       maxTempPara.textContent = `${max}`;
 
       childDiv.append(dayPara, imgIcon, minTempPara, maxTempPara);
+      childDiv.classList.add('showcase-daily-child');
       mainDiv.appendChild(childDiv);
     }
     return mainDiv;

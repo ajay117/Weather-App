@@ -15,13 +15,38 @@ body {
 .overflow-x {
   overflow-x: auto;
 }
-.flex-wrap {
-  flex-wrap: wrap;
-}
 .flex-basic {
   flex: 0 1 33.33%;
   color: white;
 }
-.bg-black {
-  background-color: black;
+.brand-bg {
+  background-color: #d03f3f;
+}
+.form-input {
+  width: 60%;
+  padding: 7px;
+}
+.form-btn {
+  background-color: #fc5130;
+  color: white;
+  padding: 9px 10px;
+  min-width: 15%;
+  border: none;
+}
+.showcase-daily {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+  margin-top: 15px;
+}
+.showcase-daily-child {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.showcase-misc {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d03f3f;
+  margin-top: 10px;
 }

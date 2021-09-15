@@ -14,7 +14,6 @@ export default function mainShowcase(cityName, countryName, weatherData) {
 
     h4.textContent = `${cityName}, ${countryName}`;
     img.src = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`;
-    //   img.src = 'http://openweathermap.org/img/wn/01n@2x.png';
     img.alt = `${weatherData.current.weather[0].description} showing image`;
     tempInfo.innerHTML = `Temperature: ${
       weatherData.current.temp
